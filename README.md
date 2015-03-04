@@ -1,11 +1,9 @@
-# Software Skills
+# 1-on-1 session 
 
 There are two bugs inside the code:
 
 (1) Syntax bug
 
-(2) Segmentation fault
+(2) Testcase failure
 
-Try to use navigating skills with compiler error message to solve the 
-first one. And gdb with core dump file to solve second.
 

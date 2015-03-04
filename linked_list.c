@@ -6,7 +6,9 @@ void list_init(list_t *h) {
     *h = NULL;
 }
 
-int list_size(const list_t *h) {
+int list_size(list_t *h) {
+	if (h == NULL || *h == NULL)
+		return 0;
     node_t *p = *h;
     int r = 0;
     do {
@@ -16,8 +18,16 @@ int list_size(const list_t *h) {
     return r;
 }
 
-int list_empty(const list_t *h) {
-    return (*h == NULL);
+int list_empty(list_t *h) {
+	if (*h = NULL) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+int list_not_empty(list_t *h) {
+    return !list_empty(h);
 }
 
 void list_insert(list_t *h, node_t *n) {
@@ -49,8 +59,7 @@ node_t *list_delete(list_t *h, int id) {
         *h = NULL;
         return r;
     }
-	// Here we have a syntax bug
-    node_t *p = list_find_before(h, id)
+    node_t *p = list_find_before(h, id);
     if (p) {
         r = p->next;
         p->next = p->next->next;

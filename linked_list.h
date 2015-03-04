@@ -15,7 +15,9 @@ void list_init(list_t *h);
 
 int list_size(const list_t *h);
 
-int list_empty(const list_t *h);
+int list_empty(list_t *h);
+
+int list_not_empty(list_t *h);
 
 /*
  * prepend the node into the front
