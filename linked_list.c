@@ -56,7 +56,7 @@ node_t *list_delete(list_t *h, int id) {
     node_t *r = NULL;
     if (*h && (*h)->id == id) {
         r = *h;
-        *h = NULL;
+        *h = (*h)->next;
         return r;
     }
     node_t *p = list_find_before(h, id);
